@@ -1,0 +1,35 @@
+<!-- 页面结构部分，定义输入、随机抽背、记录区等 -->
+<div class="container">
+  <h2>简易背单词小程序</h2>
+
+  <!-- 单词录入模块 -->
+  <div class="section" id="input-section">
+    <b>单词录入</b><br>
+    <textarea id="input-words" rows="2" placeholder="可批量录入，多个单词用半角逗号或空格分隔..."></textarea>
+    <button onclick="addWords()">添加单词</button>
+    <div class="word-list" id="word-list"></div>
+  </div>
+
+  <!-- 随机抽背模块 -->
+  <div class="section" id="recite-section">
+    <b>随机抽背~ </b>
+    <div class="memorize-word" id="random-word">请点击“随机抽取”</div>
+    <div>
+      <button class="small-btn" onclick="randomPick()">随机抽取</button>
+      <button class="small-btn" onclick="markMemorized(true)">记住了</button>
+      <button class="small-btn" onclick="markMemorized(false)">没记住</button>
+    </div>
+    <div class="memorize-result" id="memorize-status"></div>
+  </div>
+
+  <!-- 背诵记录与筛选 -->
+  <div class="section" id="record-section">
+    <b>背诵记录</b>
+    <select id="record-filter" onchange="renderWordList()">
+      <option value="all">全部</option>
+      <option value="memorized">已背</option>
+      <option value="unmemorized">未背</option>
+    </select>
+    <div class="word-list" id="record-list"></div>
+  </div>
+</div>
